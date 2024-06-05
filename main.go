@@ -16,12 +16,7 @@ func main() {
 
 	fmt.Println("Blockchain:")
 	for _, block := range bc.Blocks {
-		fmt.Printf("Index: %d\n", block.Index)
-		fmt.Printf("Timestamp: %s\n", block.Timestamp)
-		fmt.Printf("Transactions: %v\n", block.Transactions)
-		fmt.Printf("Proof: %d\n", block.Proof)
-		fmt.Printf("PreviousHash: %s\n", block.PreviousHash)
-		fmt.Printf("Hash: %s\n\n", block.Hash)
+		block.PrintBlock()
 	}
 
 	bc.AddTransaction("Charlie", "Alice", 2.5)
