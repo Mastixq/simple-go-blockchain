@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"time"
 )
 
@@ -29,13 +28,11 @@ func (bc *Blockchain) ProofOfWork(previousProof int) int {
 	for !isValidProof(previousProof, proof, bc.Difficulty) {
 		proof++
 	}
-	fmt.Printf("valid proof: %d, diff: %d", proof, bc.Difficulty)
 	return proof
 }
 
 func isValidProof(previousProof, proof, difficulty int) bool {
 	var sum = previousProof + proof
-	fmt.Println("proof:", proof, " sum: ", sum, " diff: ", difficulty)
 	return sum%difficulty == 0
 }
 
